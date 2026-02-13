@@ -1,6 +1,6 @@
 import argparse
 import logging
-from porag import BanglaRAGChain
+from porag import RAGChain
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -19,12 +19,12 @@ DEFAULT_HF_TOKEN = None
 
 def main():
     """
-    Main function to run the Bangla Retrieval-Augmented Generation (RAG) System.
+    Main function to run the Retrieval-Augmented Generation (RAG) System.
     It parses command-line arguments, loads the RAG model, and processes user queries in an interactive loop.
     """
     # Argument parser for command-line options, arguments and sub-commands
     parser = argparse.ArgumentParser(
-        description="Bangla Retrieval-Augmented Generation System"
+        description="Retrieval-Augmented Generation (RAG) System"
     )
     parser.add_argument(
         "--chat_model",
@@ -110,7 +110,7 @@ def main():
 
     try:
         # Initialize and load the RAG model
-        rag_chain = BanglaRAGChain()
+        rag_chain = RAGChain()
         rag_chain.load(
             chat_model_id=args.chat_model,
             embed_model_id=args.embed_model,
@@ -131,18 +131,18 @@ def main():
 
         # Interactive loop for user queries
         while True:
-            query = input("আপনার প্রশ্ন: ")
+            query = input("Your question: ")
             if query.lower() in ["exit", "quit"]:
-                print("আবার দেখা হবে, ধন্যবাদ!")
+                print("Goodbye, thank you!")
                 break
             try:
                 answer, context = rag_chain.get_response(query)
                 if args.show_context:
-                    print(f"প্রসঙ্গঃ {context}\n------------------------\n")
-                print(f"উত্তর: {answer}")
+                    print(f"Context: {context}\n------------------------\n")
+                print(f"Answer: {answer}")
             except Exception as e:
                 logging.error(f"Couldn't generate an answer: {e}")
-                print("আবার চেষ্টা করুন!")
+                print("Please try again!")
 
     except Exception as e:
         logging.critical(f"Fatal error: {e}")

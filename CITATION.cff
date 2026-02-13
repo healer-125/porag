@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: Porag (Bangla RAG pipeline)
+title: PoRAG (RAG pipeline)
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -14,20 +14,16 @@ authors:
     email: hassanzahin@gmail.com
 identifiers:
   - type: url
-    value: 'https://github.com/Bangla-RAG/PoRAG'
-repository-code: 'https://github.com/Bangla-RAG/PoRAG'
-url: 'https://github.com/Bangla-RAG'
+    value: 'https://github.com/PoRAG/PoRAG'
+repository-code: 'https://github.com/PoRAG/PoRAG'
+url: 'https://github.com/PoRAG/PoRAG'
 abstract: >-
-  Fully Configurable RAG Pipeline for Bengali Language RAG
+  Fully Configurable RAG Pipeline for Document Q&A
   Applications. Supports both local and huggingface models,
   built with ChromaDB and Langchain.
 keywords:
-  - bengali_nlp
-  - bangla_nlp
   - nlp
-  - Bengaliai
   - rag
-  - bangallm
   - langchain
   - chromadb
   - llama

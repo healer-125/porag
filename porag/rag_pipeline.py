@@ -26,17 +26,17 @@ warnings.filterwarnings("ignore")
 CACHE_DIR = "./models"
 
 
-class BanglaRAGChain:
+class RAGChain:
     """
-    Bangla Retrieval-Augmented Generation (RAG) Chain for question answering.
+    Retrieval-Augmented Generation (RAG) Chain for question answering.
 
     This class uses a HuggingFace/local language model for text generation, a Chroma vector database for
     document retrieval, and a custom prompt template to create a RAG chain that can generate
-    responses to user queries in Bengali.
+    responses to user queries.
     """
 
     def __init__(self):
-        """Initializes the BanglaRAGChain with default parameters."""
+        """Initializes the RAG chain with default parameters."""
         self._device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.chat_model_id = None
         self.embed_model_id = None
@@ -166,7 +166,7 @@ class BanglaRAGChain:
             with open(self.text_path, "r", encoding="utf-8") as file:
                 self._text_content = file.read()
             character_splitter = RecursiveCharacterTextSplitter(
-                separators=["!", "?", "।"],
+                separators=["\n\n", "\n", "!", "?", "."],
                 chunk_size=self.chunk_size,
                 chunk_overlap=self.chunk_overlap,
             )
@@ -209,7 +209,7 @@ class BanglaRAGChain:
 
     def _create_chain(self):
         """Creates the retrieval-augmented generation (RAG) chain."""
-        template = """Below is an instruction in Bengali language that describes a task, paired with an input also in Bengali language that provides further context. Write a response in Bengali that appropriately completes the request.
+        template = """Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
 
         ### Instruction:
         {question}

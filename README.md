@@ -411,18 +411,3 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-## Authors
-
-<table>
-  <tr>
-    <td align="center"><strong>Al Asif Abdullah</strong><br/><a href="mailto:asif.inc.bd@gmail.com">asif.inc.bd@gmail.com</a><br/><a href="https://orcid.org/0009-0009-6166-9975">ORCID</a></td>
-    <td align="center"><strong>Hasan Al Emon</strong><br/><a href="mailto:hassanzahin@gmail.com">hassanzahin@gmail.com</a></td>
-  </tr>
-</table>
-
----
-
-<p align="center">
-  Made with dedication for the RAG and NLP community<br/>
-  <a href="https://github.com/PoRAG/PoRAG">PoRAG</a>
-</p>

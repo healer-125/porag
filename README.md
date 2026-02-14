@@ -1,15 +1,15 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/PoRAG-RAG%20Pipeline-blueviolet?style=for-the-badge&logo=python&logoColor=white" alt="PoRAG Banner"/>
+  <img src="https://img.shields.io/badge/ProRAG-RAG%20Pipeline-blueviolet?style=for-the-badge&logo=python&logoColor=white" alt="ProRAG Banner"/>
 </p>
 
-<h1 align="center">PoRAG</h1>
+<h1 align="center">ProRAG</h1>
 
 <p align="center">
   <em>A Fully Configurable Retrieval-Augmented Generation Pipeline for Document Q&A Applications</em>
 </p>
 
 <p align="center">
-  <a href="https://github.com/PoRAG/PoRAG/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"/></a>
+  <a href="https://github.com/ProRAG/ProRAG/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License: MIT"/></a>
   <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+"/></a>
   <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.x-EE4C2C.svg?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch"/></a>
   <a href="https://huggingface.co/"><img src="https://img.shields.io/badge/HuggingFace-Transformers-FFD21E.svg?style=flat-square&logo=huggingface&logoColor=black" alt="HuggingFace"/></a>
@@ -45,9 +45,9 @@
 
 ## Overview
 
-**PoRAG** is an open-source, fully configurable **Retrieval-Augmented Generation (RAG)** pipeline for document Q&A applications. It bridges the gap between large language models and domain-specific knowledge by combining semantic document retrieval with instruction-tuned text generation.
+**ProRAG** is an open-source, fully configurable **Retrieval-Augmented Generation (RAG)** pipeline for document Q&A applications. It bridges the gap between large language models and domain-specific knowledge by combining semantic document retrieval with instruction-tuned text generation.
 
-Built on top of **LangChain**, **ChromaDB**, and **Hugging Face Transformers**, PoRAG allows researchers and developers to perform context-aware question answering over text corpora with minimal setup. Whether you're building a chatbot, an academic research tool, or a document Q&A system — PoRAG provides the modular, extensible foundation to get started.
+Built on top of **LangChain**, **ChromaDB**, and **Hugging Face Transformers**, ProRAG allows researchers and developers to perform context-aware question answering over text corpora with minimal setup. Whether you're building a chatbot, an academic research tool, or a document Q&A system — PoRAG provides the modular, extensible foundation to get started.
 
 ---
 
@@ -72,7 +72,7 @@ Built on top of **LangChain**, **ChromaDB**, and **Hugging Face Transformers**, 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                          PoRAG Pipeline                             │
+│                          ProRAG Pipeline                             │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
 │   ┌──────────────┐    ┌───────────────────┐    ┌────────────────┐  │
@@ -146,8 +146,8 @@ Built on top of **LangChain**, **ChromaDB**, and **Hugging Face Transformers**, 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/PoRAG/PoRAG.git
-cd PoRAG
+git clone https://github.com/healer-125/pro-rag.git
+cd pro-rag
 ```
 
 2. **Create a virtual environment** (recommended)
@@ -177,7 +177,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 ### Command-Line Interface
 
-Run PoRAG with a text file:
+Run ProRAG with a text file:
 
 ```bash
 python main.py --text_path ./test.txt
@@ -214,10 +214,10 @@ Goodbye, thank you!
 
 ### Programmatic API
 
-Use PoRAG as a Python library in your own applications:
+Use ProRAG as a Python library in your own applications:
 
 ```python
-from porag import RAGChain
+from prorag import RAGChain
 
 # Initialize the pipeline
 rag = RAGChain()
@@ -269,9 +269,9 @@ print(f"Context: {context}")
 ## Project Structure
 
 ```
-PoRAG/
+ProRAG/
 ├── main.py                        # CLI entry point & interactive Q&A loop
-├── porag/                         # Core package
+├── prorag/                         # Core package
 │   ├── __init__.py                # Package exports (RAGChain)
 │   └── rag_pipeline.py            # RAG pipeline implementation
 ├── test.txt                       # Sample text file for testing
@@ -285,7 +285,7 @@ PoRAG/
 
 ## How It Works
 
-PoRAG follows a standard RAG workflow:
+ProRAG follows a standard RAG workflow:
 
 1. **Document Ingestion** — Text is read from a `.txt` file and split into overlapping chunks using `RecursiveCharacterTextSplitter` with configurable delimiters (e.g. `!`, `?`).
 
@@ -319,7 +319,7 @@ You can replace the default models with any compatible Hugging Face model:
 
 ## Roadmap & Future Enhancements
 
-PoRAG is actively evolving. Below are planned and aspirational features aligned with the latest advancements in the Python and AI ecosystem:
+ProRAG is actively evolving. Below are planned and aspirational features aligned with the latest advancements in the Python and AI ecosystem:
 
 ### Near-Term
 
@@ -389,14 +389,14 @@ Please ensure your code follows the existing style and includes appropriate docu
 
 ## Citation
 
-If you use PoRAG in your research, please cite it:
+If you use ProRAG in your research, please cite it:
 
 ```bibtex
-@software{porag2024,
-  title     = {PoRAG: A Fully Configurable RAG Pipeline for Document Q&A Applications},
+@software{prorag2024,
+  title     = {ProRAG: A Fully Configurable RAG Pipeline for Document Q&A Applications},
   author    = {Abdullah, Al Asif and Al Emon, Hasan},
   year      = {2024},
-  url       = {https://github.com/PoRAG/PoRAG},
+  url       = {https://github.com/healer-125/pro-rag},
   license   = {MIT}
 }
 ```
